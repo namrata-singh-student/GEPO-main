@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e6f7ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.about-section h2 {
+    color: #0073e6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Resource Card Styling */
+.resource-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card h3 {
+    color: #0073e6;
+    margin-bottom: 15px;
+}
+
+.resource-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.resource-card ul li {
+    margin: 10px 0;
+    color: #555;
+}
+
+.resource-card ul li a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+}
+
+.resource-card ul li a:hover {
+    text-decoration: underline;
+    color: #005bb5;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

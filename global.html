@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Partnerships</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+</head>
+<body>
+    <header>
+        <img src="Images/jis-logo.png" alt="Global Partnerships Logo">
+        <h1>Global Partnerships</h1>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Interactive Map</h2>
+        <div id="map"></div>
+
+        <h2 class="section-title">Success Stories</h2>
+        <div class="success-stories">
+            <div class="carousel">
+                <div class="story-card">
+                    <h3>Research Collaboration with XYZ University</h3>
+                    <p>A groundbreaking project in AI and Machine Learning.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Student Exchange Program</h3>
+                    <p>Over 200 students participated in our global exchange initiative.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Corporate Partnership with ABC Corp</h3>
+                    <p>Launching new internship opportunities worldwide.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Partnership Enquiry Form</h2>
+        <div class="partnership-form">
+            <form action="global.php" method="POST">
+                <label for="organization">Organization Name</label>
+                <input type="text" id="organization" name="organization" placeholder="Organization Name" required><br>
+
+                <label for="contact">Contact Person</label>
+                <input type="text" id="contact" name="contact" placeholder="Contact Person" required><br>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required><br>
+
+                <label for="partnership-type">Partnership Type</label>
+                <select id="partnership-type" name="partnership-type" required><br>
+                    <option value="">Select Partnership Type</option><br>
+                    <option value="research">Research</option><br>
+                    <option value="faculty-exchange">Faculty Exchange</option>
+                    <option value="student-exchange">Student Exchange</option>
+                </select>
+
+                <label for="message">Your Proposal Details</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Proposal Details"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <h2 class="section-title">Guidelines for Partnerships</h2>
+        <div class="guidelines">
+            <p>
+                Learn how to become our partner by following our detailed guidelines. <br>
+                <a href="Guidelines for Partnerships.docx" download="Guidelines_for_Partnerships.pdf">Download Guidelines</a>
+            </p>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([0, 0], 2); // Centered at (0, 0) with zoom level 2
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Example markers for demonstration
+        const partners = [
+            { name: "Dhaka International University", lat: 23.8103, lng: 90.4125, description: "Located in Dhaka, Bangladesh." },
+            { name: "Asian Institute of Technology", lat: 13.7800, lng: 100.6170, description: "Located in Bangkok, Thailand." },
+            { name: "ESIGELEC- School of Engineering", lat: 49.4144, lng: 1.0975, description: "Located in Rouen, France." },
+            { name: "Metropolitan College of New York", lat: 40.7128, lng: -74.0060, description: "Located in New York City, USA." }
+        ];
+
+        partners.forEach(partner => {
+            L.marker([partner.lat, partner.lng]).addTo(map)
+                .bindPopup(`<b>${partner.name}</b><br>${partner.description}`);
+        });
+    </script>
+    
+</body>
+</html>

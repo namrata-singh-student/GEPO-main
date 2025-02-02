@@ -1,0 +1,14 @@
+.back {
+    border: 0px; 
+    background: #C0C0C0;
+}
+.bac {
+    mix-blend-mode: darken;
+}
+.head {
+    height: 80px;
+    background-color: #C0C0C0;
+}
+.form-cont {
+    height: 90vh;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Typing Effect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-light-900 text-white">
+  <div>
+    <h1 class="text-3xl font-bold">
+      <span id="typing-text" class="border-r-2 border-white pr-2"></span>
+    </h1>
+  </div>
+
+  <script>
+    // JavaScript for auto typing effect
+    const textArray = ["Your Gateway to ","Global Collaboration!", "Connecting students, faculty","and", " institutions to ","international opportunities."];
+    const typingSpeed = 100; // Speed of typing
+    const erasingSpeed = 50; // Speed of erasing
+    const delayBetweenTexts = 2000; // Delay between texts
+    let textIndex = 0; // Index of the current text
+    let charIndex = 0; // Index of the current character
+    const typingText = document.getElementById("typing-text");
+
+    function type() {
+      if (charIndex < textArray[textIndex].length) {
+        typingText.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(erase, delayBetweenTexts);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingText.textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+      } else {
+        textIndex = (textIndex + 1) % textArray.length;
+        setTimeout(type, typingSpeed);
+      }
+    }
+
+    // Start the typing effect
+    document.addEventListener("DOMContentLoaded", () => {
+      if (textArray.length) type();
+    });
+  </script>
+</body>
+</html>

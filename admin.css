@@ -1,0 +1,49 @@
+.heading {
+    background: rgb(122, 174, 230);
+    height: 120px;
+}
+.title {
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+.card-cont {
+    background: rgb(122, 174, 230);
+    height: max-content;
+}
+
+.sect-card {
+    height: max-content;
+}
+
+.bar {
+    background-color: rgb(0, 3, 97);
+    box-shadow: 0 5px 5px rgba(4, 1, 96, 0.87);
+}
+.user {
+    color: aliceblue;
+    padding-left: 3px;
+    display: inline;
+}
+.logout {
+    margin-right: 20px;
+}
+.main {
+    background: rgb(122, 174, 230);
+}
+.underline {
+    text-decoration: underline;
+}
+.card-1 {
+    width:1000px;
+    height: 350px;
+}
+
+.card {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transition effects */
+}
+
+.card.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
